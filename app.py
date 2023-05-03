@@ -41,4 +41,4 @@ cpu_implementation=st.selectbox("Cpu implemented",drop_down['cpu_implementation'
 if st.button('Predict Price'): 
     query=np.array([no_of_core, display_size, ram, Storage_type, Storage_capacity, color, company,type_company, cpu_type, cpu_implementation])
     query=query.reshape(1,10)
-    st.title(int(np.exp(predict_model.predict(query))[0]))
+    st.title("Approximated price for your configuration is ",int(np.exp(predict_model.predict(query))[0])," Rs.")
